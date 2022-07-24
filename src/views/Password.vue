@@ -1,6 +1,7 @@
 <template>
   <v-form>
-    <v-card elevation="2" class="py-12">
+    <div align="center">
+      <v-card elevation="2" class="py-10" max-width="75%">
       <v-img class="white--text align-end"
              height="250px"
              contain
@@ -57,6 +58,7 @@
         </v-row>
       </v-card-actions>
     </v-card>
+    </div>
   </v-form>
 </template>
 
@@ -118,5 +120,4 @@ export default class Password extends Vue{
 </script>
 
 <style scoped>
-
 </style>

@@ -1,6 +1,7 @@
-<template>
+<template class="MyBackground">
   <v-form>
-    <v-card elevation="2" class="py-12">
+    <div align="center">
+      <v-card elevation="2" class="py-12" max-width="75%">
       <v-img class="white--text align-end"
              height="250px"
              contain
@@ -19,6 +20,7 @@
         <qrcode-vue align="center" v-show="inputText0 && inputText0 !== ''" :value="inputText0"></qrcode-vue>
       </v-card-text>
     </v-card>
+    </div>
   </v-form>
 </template>
 
