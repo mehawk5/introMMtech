@@ -1,7 +1,7 @@
 <template>
   <v-form>
     <div align="center">
-      <v-card elevation="2" class="py-10" max-width="75%">
+      <v-card elevation="2" class="py-6" max-width="75%">
       <v-img class="white--text align-end"
              height="250px"
              contain
@@ -33,6 +33,7 @@
         <v-checkbox label="Lowercase" v-model="lowercase"></v-checkbox>
         <v-checkbox label="Numbers" v-model="numbers"></v-checkbox>
         <v-checkbox label="Special characters" v-model="specials"></v-checkbox>
+        <v-checkbox :disabled="!uppercase && !lowercase" label="Start with a letter" v-model="letterStart"></v-checkbox>
       </v-card-text>
       <v-card-actions class="justify-center">
         <v-row>
@@ -74,6 +75,7 @@ export default class Password extends Vue{
   lowercase = false;
   numbers = false;
   specials = false;
+  letterStart = false;
 
 
   randomUppercase(){
@@ -91,9 +93,17 @@ export default class Password extends Vue{
     return specials[Math.floor(Math.random() * specials.length)];
   }
   generatePass(){
-
     let randoms = [] as any;
+    let passLengthHelper = this.passLength;
     this.generatedPass = "";
+    if(this.letterStart && this.passLength >= 1){
+      if(this.uppercase) randoms.push(this.randomUppercase());
+      if(this.lowercase) randoms.push(this.randomLowercase());
+      if(randoms.length >= 1){
+        this.generatedPass += randoms[Math.floor(Math.random() * randoms.length)];
+        this.passLength--;
+      }
+    }
     for(let i = 1; i <= this.passLength; i++) {
       randoms.length = 0;
       if(this.uppercase) randoms.push(this.randomUppercase());
@@ -103,6 +113,7 @@ export default class Password extends Vue{
       this.generatedPass += randoms[Math.floor(Math.random() * randoms.length)];
     }
     if(!this.uppercase && !this.lowercase && !this.numbers && !this.specials) this.generatedPass = "";
+    this.passLength = passLengthHelper;
   }
   clearPass(){
     this.generatedPass = "";
