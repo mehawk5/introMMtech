@@ -24,7 +24,7 @@
         </v-col>
       </v-row>
     </v-app-bar>
-    <v-navigation-drawer width="300" align="center" dark permanent clipped app class="dark-grey darken-4" absolute>
+    <v-navigation-drawer fixed width="300" align="center" dark permanent clipped app class="dark-grey darken-4" >
       <v-avatar
           class="profile"
           color="grey"

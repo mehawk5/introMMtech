@@ -1,6 +1,10 @@
 <template>
   <v-form>
     <v-card elevation="2" class="py-12">
+      <v-img class="white--text align-end"
+             height="250px"
+             contain
+             src="@/assets/qrcode.jpeg" ></v-img>
       <v-card-title class="justify-center">
         QR code generator
       </v-card-title>
