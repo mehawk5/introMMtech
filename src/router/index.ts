@@ -10,22 +10,36 @@ const routes: Array<RouteConfig> = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    component: Home,
+    meta:{
+      title: "Personal portfolio"
+    }
   },
   {
     path: '/password',
     name: 'password',
-    component: Password
+    component: Password,
+    meta:{
+      title: "Password generator"
+    }
   },
   {
     path: '/qrcode',
     name: 'qrcode',
-    component: Qrcode
+    component: Qrcode,
+    meta:{
+      title: "QR code generator"
+    }
   },
 ]
 
 const router = new VueRouter({
   routes
 })
+
+router.beforeEach((to, from, next) => {
+  document.title = (to.meta as any).title;
+  next();
+});
 
 export default router
