@@ -1,6 +1,6 @@
 # intro-mm-project
 
-![GitHub last commit](http://localhost:9090/github/last-commit/Medhatt12/Klujam-Winter2022)
+![GitHub last commit](http://10.187.54.42:9090/github/last-commit/Medhatt12/Klujam-Winter2022)
 
 ## Project setup
 ```
