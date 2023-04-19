@@ -1,6 +1,6 @@
 # intro-mm-project
 
-![GitHub pull request check state](http://localhost:8080/github/status/s/pulls/mehawk5/introMMtech/1)
+![GitHub last commit](http://localhost:9090/github/last-commit/Medhatt12/Klujam-Winter2022)
 
 ## Project setup
 ```
