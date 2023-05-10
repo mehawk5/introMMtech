@@ -4,6 +4,8 @@
 
 ![GitHub last commit](http://shields.io/github/last-commit/Medhatt12/Klujam-Winter2022)
 
+shields.io
+
 ## Project setup
 ```
 npm install
